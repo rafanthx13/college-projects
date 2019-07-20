@@ -1,12 +1,12 @@
-# Proejto Blender
+# Projeto Blender
 
-Criar modelo 3D com materiais e texturas. Rederizar e criar sitema de navegação
+Criar modelo 3D com materiais e texturas com Blender e OpenGL. Renderizar e criar sistema de navegação.
 
 ## Executar
 
 `python cena.py`
 
-Obs: Instale as depedencias do Python.
+Obs: Instale as depedências do Python.
 
 + `w`: cima
 + `a`: baixo
