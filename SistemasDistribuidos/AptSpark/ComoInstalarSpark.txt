@@ -1,0 +1,72 @@
+## Curso Spark Udemy
+
+
+### Como instalar no Linux (Ubuntu)
+
++ Usará python 3
++ Instalar pip:
+ - sudo apt-get install curl (retira diretamente linsk
+ - curl -sS https://bootstrap.pypa.io/get-pip.py | sudo python3
++ Instlar jupyter notebook
+ - pip install jupyter
++ Insltar Java (SPark usa scla, que roda sobre JVM)
+ - sudo apt-get update
+ - soodoo apt-get install default-jre
+ -  java -version (se apresentar uma versao, entao, esta funcionando corretmatente)
+ - sudo apt-get install scala
++ INstalar py4j
+ - (Serve para o python se comunicar com java)
++ Baixe o spark.apache no site : http://spark.apache.org/
+ - FOi baixado o arquivo spark-2.4.3-bin-hadoop2.7.tgz de 219 Mb
+ - Descompacte ele com o seguinte comando:
+  * sudo tar -zxvf spark-2.4.3-bin-hadoop2.7.tgz
+
++ Variaveis de ambiente
+export SPARK_HOME='/home/__diretorio__/spark-2.4.3-bin-hadoop2.7'
+	 - /home/rhavel/Softwares/spark-2.4.3-bin-hadoop2.7
+export PATH=$SPARK_HOME:$PATH
+export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON=OPTS="notebook"
+export PYSPARK_PYTHON=python3
+
++ Depois mude as permisoees de w/r dessa pasta
+ - sudoo chmod 777 spark(hit tab)
+  * 777 : torna readble, wriatable and executable for every one
+
++ Agora vamos testar se o pyspark esta funcionando
+ - entre na pasta 
+$ cd spark(tab)/
+$ cd python/
+ - exeucte python3 para aprir o interpretador
+ - COm o interpretador aberto execute o seguinte comando
+>>> import pyspark
+  - Se depois aparecer >>>>> significa que deu certo e esta funcionano
+ - precisa de 'py'j' sem ele nao funcina
+ - execute 'quit)( " para sair
+
++ Libere o acesso para a pasta python
+ - entre no diretorio do spark (cd spark (hit tab)
+ - entao libere com 'sudo chmod 777 python'
+ - depois entre na pasta python 'cd pytohn/'
+ - libere permissoees da pasta spark com 'sudo chmod 777 pyspark'
+
+
+FIm
+
+INstale as seguites depednecias
+
+pip install findspark
+ - Vai servir para direncionar para a pasta do spark que vocÊ instalou
+pip install tweepy
+ - pegar dados do twiterr
+
+Execute o arquivo TweetRead: e insira os dados do Wtieter, os 4 tookesn que ele gera da sua conta provada do twiterr.
+Gere o arquivo .py no jupyeter noteboook dele.
+
+execute 'pytohn TweetREad' vai ficar lendo na porta 555
+
+
+
+Abra o  FIrst Twitter App
+

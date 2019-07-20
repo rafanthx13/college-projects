@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1501630885 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafo_profundidade\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<string.h>
+
+1501632780 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafos_profundidade_analisedengrafos_matrizadj\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+src/dataset/.ipynb_checkpoints
+src/class/__pycache__/
+src/comentarios.py
+src/pesos.csv
+*.ipynb
+src/old_version/comentarios.py

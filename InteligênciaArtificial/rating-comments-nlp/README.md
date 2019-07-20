@@ -16,10 +16,10 @@ DataSet: https://www.kaggle.com/olistbr/brazilian-ecommerce/home
 4. Execute os seguintes comandos no terminal: Instalar o virtual env, executalo, instlar as dependencias do python para o projeto, configurar `FLASK_APP` e rodar o server localmente.
 
 ```
-$ sudo apt install python3-venv			
+$ sudo apt install python3-venv
 $ python3 -m venv venv
 $ source venv/bin/activate
-(venv) $ pip install Flask
+(venv) $ pip install flask
 (venv) $ pip install flask_cors
 (venv) $ pip install torch
 (venv) $ pip install pandas

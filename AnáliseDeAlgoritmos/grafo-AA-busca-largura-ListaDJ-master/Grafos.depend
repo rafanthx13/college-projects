@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1501076368 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outr\analise para grafos\grafos\grafos.c
+	"grafos.h"
+
+1501075997 c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outr\analise para grafos\grafos\grafos.h
+	<stdio.h>
+	<stdlib.h>
+
+1501077719 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outr\analise para grafos\grafos\main.c
+	"grafos.h"
+
+1501076368 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\analise para grafos\grafos\grafos.c
+	"grafos.h"
+
+1501603979 c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\analise para grafos\grafos\grafos.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<string.h>
+
+1501631956 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafos_largura_analisedengrafos_listaadj\grafos.c
+	"grafos.h"
+
+1501603979 c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafos_largura_analisedengrafos_listaadj\grafos.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<string.h>
+
+1501632574 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafos_largura_analisedengrafos_listaadj\main.c
+	"grafos.h"
+
+1501631956 source:c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafo_largura_muitasarestas\grafos.c
+	"grafos.h"
+
+1501603979 c:\users\rafael\google drive\ufu\análise de algoritmos\proj2 - analise de outros algoritmos\grafo_largura_muitasarestas\grafos.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<string.h>
+
