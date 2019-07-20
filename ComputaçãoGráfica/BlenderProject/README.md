@@ -14,3 +14,7 @@ Obs: Instale as depedencias do Python.
 + `s`: esquerda
 + `p`: luz 1
 + `o`: luz 2
+
+## Execução
+
+![](blender_image.png)
