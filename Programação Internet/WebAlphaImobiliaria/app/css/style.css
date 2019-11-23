@@ -1,0 +1,239 @@
+/*
+  Cores e Fontes
+    Cor da Logo (Vermelho) : #B82C31 ;
+    Cor do Texto (Cinza): #7E7E7E;
+    Fontes: Cinzel(Título), Roboto (Texto Normal;
+*/
+
+.logoHeader {
+  width: 100px;
+}
+
+.red-line {
+  margin: 0;
+  padding: 0;
+  height: 5px;
+  background-color: #B82C31;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: #7E7E7E;
+}
+
+.my-nav {
+  background-color: #B82C31;
+}
+
+.header {
+  background-color: white;
+}
+
+.back-top {
+  float: right;
+}
+
+.nav-li {
+  display: inline;
+}
+
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Cinzel";
+  color: #7E7E7E;
+}
+
+@font-face {
+  font-family: "Cinzel", serif;
+  src: local("./../fonts/Cinzel/Cinzel-Regular.ttf") format("tff");
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: local("./../fonts/Roboto/Roboto-Regular.ttf") format("tff");
+}
+
+p {
+  font-family: "Roboto";
+}
+
+h2 {
+    font-family: "Cinzel";
+    color: #7E7E7E;
+}
+
+.red-hr {
+  color: #B82C31;
+}
+
+.login-button {
+  border-color: white;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: white;
+  border-color: white;
+  color: #B82C31;
+}
+
+.login-button:active {
+  background-color: #7E7E7E;
+  border-color: white;
+  color: #B82C31;
+}
+
+.login-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 94, 0.5);
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.modal-title {
+  color: #7E7E7E;
+  font-family: "Cinzel";
+  font-size: 18pt;
+  margin-left: 30%;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.svg-hamburguer {
+  filter: invert(0.5);
+}
+
+.logoMain{
+  align-content: center;
+  width: 1200px;
+  height: 300px;
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: blur(5px);
+}
+
+h2 {
+  font-family: "Cinzel";
+  color: #7E7E7E;
+}
+
+p {
+  font-family: "Roboto";
+}
+
+.img-background {
+  background-image: url("./../img/imoveisList.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  width: 1200px;
+  height: 450px;
+}
+
+.form {
+  display: table;
+  margin: auto;
+  color:rgb(46, 45, 45);
+  font-family: "Roboto";
+  font-size: 12pt;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* Alinhar DropDowns */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.private-nav-btn {
+  background-color: #B82C31;
+}
+
+.login-button, .private-nav-btn {
+  border-color: #B82C31;
+  color: white;
+}
+
+.login-button:hover, .private-nav-btn:hover{
+  background-color: white;
+  border-color: white;
+  color: #B82C31;
+}
+
+.private-nav-btn:active {
+  background: white;
+}
+
+.center-private {
+  text-align: center;
+}
+
+.gray-line {
+  margin: 0;
+  padding: 0;
+  height: 2px;
+  background-color:#7E7E7E;
+}
+
+.btn-my-link {
+  color: white;
+}
+
+.btn-my-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.imgGalery {
+  border-top: 10px;
+  width: 230px;
+  height: 200px;
+  border-radius: 20px;
+  display: none;
+}
+
+/* So vai funcionar em imovel.list, pois eh o unico
+    que tem uma div com a classe aptosList */
+div.aptosList td {
+  width: 230px;
+  height: 200px;
+  padding: 10px;
+}
+
+.imgModal {
+  width: 765px;
+  height: 500px;
+  border-radius: 20px;
+  display: none;
+}
+
+.aptoSelecionadosBairros {
+  font-family: "Roboto";
+  color: rgb(33, 37, 41);
+}
+
+tr {
+  font-size: small;
+}
+
+.submit-button {
+  align-self: flex-end;
+   text-align: -webkit-right;
+}
+

@@ -5,3 +5,6 @@ ComputaçãoGráfica/BlenderProject/sun.blend
 ComputaçãoGráfica/BlenderProject/tree2.blend
 ComputaçãoGráfica/BlenderProject/tree_terceira.blend
 ComputaçãoGráfica/BlenderProject/cherno.blend
+
+**/node_modules/**
+**/vendor/**
