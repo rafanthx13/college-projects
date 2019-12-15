@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="vaccumCleaner">
+<head>
+	<style>
+		.jumbotron {
+			width: 1000px;
+			text-align: center;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.selectOptions {
+		    display: inline !important;
+		    width: 85% !important;
+		}
+
+		.buttonPress{
+			margin-top: 30px;
+		}
+
+		.span-left {
+		    display: block; /*Descer imagem*/
+		    padding-left: 45px;
+		    text-align: left;
+		}
+
+		.span-right {
+		    display: block;
+		    padding-right: 45px;
+		    text-align: right;
+		}
+
+		.table-margin {
+    		margin-top: 30px;
+		}
+
+	</style>
+	<meta charset="utf-8">
+	<title>Vacuum Cleaner</title>
+	<link rel="stylesheet" type="text/css" href="app/node_modules/bootstrap/css/bootstrap.css">	
+	<script src="app/node_modules/angular/angular.js"></script>
+	<!-- Essa porra so funcionando botao ng-app e ng-ng-controller nas budega -->
+	<script>
+		angular.module("vaccumCleaner", []);
+		angular.module("vaccumCleaner").controller("vaccumCleaner", function ($scope, $http, $log) {
+
+			var opposite = {'A':'B', 'B':'A'};
+			var img = 'img/';
+			var mapWhereIAm =  {'true': '1_vaccum_dirty.jpg', 'false': '3_vaccum_no_dirty.jpg'};
+			var mapWhereINotIam = {'true': '2_no_vaccum_dirty.jpg', 'false': '4_no_vaccum_no_dirty.jpg'};
+
+			$scope.sucessDiv = false;
+			$scope.imgA = 'img/4_no_vaccum_no_dirty.jpg';
+			$scope.imgB = 'img/4_no_vaccum_no_dirty.jpg';
+			$scope.imgs = {'A':'img/4_no_vaccum_no_dirty.jpg', 'B':'img/4_no_vaccum_no_dirty.jpg'};
+			$scope.sequence_agent = null;
+			$scope.startPlaces = ['A', 'B'];
+			$scope.dirtyPlaces = [{desc: 'Limpo', value: false},
+								 {desc: 'Sujo', value: true}];
+
+			$scope.simpleVacuum = function (agent) {
+				$scope.sucessDiv = false;
+				agent.dirtyA = agent.dirtyA.value;
+				agent.dirtyB = agent.dirtyB.value;
+				$http.post("http://localhost:5000/simple_vc", agent).then(function (response){
+					$scope.sequence_agent = response.data;
+					//choseStateImages($scope.sequence_agent[0]);
+				}).catch(function (err){
+					console.log('Catch By error Exception of HTTP');
+					console.log(err)
+				});
+			};
+
+			// Exemplo de state {action: "clean", |-Outro Objeto-| agent: {dirty: {A: false, B: false}, position: "A"} }
+			// Usando Hashing de Objetos : Realizo o mapeamento das imagens considerano incnialmente a posiçâo em que se está
+			function choseStateImages(state){
+				$scope.imgs[state.agent.position] = img + mapWhereIAm[ state.agent.dirty[ state.agent.position ]];
+				$scope.imgs[opposite[state.agent.position]] = img + mapWhereINotIam[ state.agent.dirty[ opposite[state.agent.position] ]];
+			};
+
+			$scope.executeAction = function(sequence_agent){
+				choseStateImages(sequence_agent.shift());
+				$scope.sucessDiv = sequence_agent.length == 0 ? true : false;
+			};
+
+		});
+	</script>
+</head>
+<body ng-controller='vaccumCleaner'>
+	<div class="jumbotron">
+
+		<!-- Inputs -->
+		<h3>Agente Aspirador de Pó</h3>
+		<form name='agentForm'>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<select class="form-control selectOptions" ng-model="agent.startState" ng-options="place for place in startPlaces" ng-require="true">
+						<option value="">Seleciona a Posição Inicial</option>
+						</select>
+					</div>
+					<div class="col">
+						<select class="form-control selectOptions" ng-model="agent.dirtyA" ng-options="dirty.desc for dirty in dirtyPlaces" ng-require="true">
+							<option value=""> A está sujo ou Limpo</option>
+						</select>
+					</div>
+					<div class="col">
+						<select class="form-control selectOptions" ng-model="agent.dirtyB" ng-options="dirty.desc for dirty in dirtyPlaces" ng-require="true" name="dirtyB">
+							<option value="">B está sujo ou Limpo</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+			<button type="button" class="btn btn-primary btn-lg buttonPress" ng-click="simpleVacuum(agent)"">Press</button>
+			</div>
+		</form>
+
+		<!-- Agent in Grid -->
+		<div class='container' style="margin-top: 10px; margin-bottom: 10px;" ng-show="sequence_agent.length > 0">
+			<div class='row'>
+				<div class="col">
+					<span class="span-right display-8">A</span>
+					<img class="rounded border border-dark" ng-src="{{imgs.A}}" height="100" width="100" align='right' alt="Smiley face">
+				</div>
+				<div class="col">
+					<span class="span-left display-8">B</span>
+					<img class="rounded border border-dark" ng-src="{{imgs.B}}" height="100" width="100" align='left' alt="Smiley face">
+				</div>
+			</div>
+		</div>
+
+		<!-- Dinamic Table with Button to Actions -->
+		<table class="table table-striped" ng-show="sequence_agent.length > 0">
+			<tr>
+				<th scope="col">Posição do Agente</th>
+				<th scope="col">Estado A</th>
+				<th scope="col">Estado B</th>
+				<th scope="col">Ação</th>
+			</tr>
+			<tr ng-repeat="state in sequence_agent">
+				<td>{{ state.agent.position }}</td>
+				<td>{{ state.agent.dirty.A }}</td>
+				<td>{{ state.agent.dirty.B }}</td>
+				<td>{{ state.action }}</td>
+			</tr>			
+		</table>
+
+		<div class='container'>
+			<button class="btn btn-primary btn-block" ng-click="executeAction(sequence_agent)" ng-show="sequence_agent.length > 0">Executar acao</button>
+		</div>
+
+		<div class="container alert alert-success" ng-show="sucessDiv" style="background-color: #77c589; margin-top: 10px;">
+  			Fim
+		</div>
+
+	</div> <!-- End Jubotron #248e2e -->
+</body>
+</html>
